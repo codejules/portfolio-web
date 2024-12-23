@@ -1,0 +1,42 @@
+---
+import Badge from "./Badge.astro";
+import LinkedIn from "./icons/LinkedIn.astro";
+import Email from "./icons/Email.astro";
+import Social from "../components/Social.astro";
+import SectionLayout from "../layouts/SectionLayout.astro";
+---
+
+<SectionLayout>
+    <div class="max-w-xl">
+        <div class="flex items-center gap-8 mb-7">
+            <img
+                class="rounded-full size-14"
+                src="https://iamjulio.dev/cv/me.webp"
+                alt="iamjuliodev photo"
+                title="iamjuliodev photo"
+            />
+            <a href="" class="flex items-center transition md:justify-center md:hover:scale-105">
+                <Badge>Disponible para trabajar</Badge>
+            </a>
+        </div>
+        <h1 class="text-white text-xl md:text-4xl font-bold">
+            Hey, soy iamjuliodev
+        </h1>
+        <h2 class="text-white mt-4 text-md md:text-xl">
+            +15 años de experiencia. <span class="text-yellow-100"
+                >Frontend Developer y B2C Commerce Developer Salesforce</span
+            > de Valencia, España 🇪🇸. Especializado en la creación de soluciones
+            innovadoras y personalizadas.
+        </h2>
+        <nav class="items-center flex gap-4 mt-8">
+            <Social href="mailto:linkedin@iamjulio.dev">
+                <Email />
+                Contáctame</Social
+            >
+            <Social href="https://www.linkedin.com/in/iamjuliodev/">
+                <LinkedIn class="size-4" />
+                LinkedIn</Social
+            >
+        </nav>
+    </div>
+</SectionLayout>

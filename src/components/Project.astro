@@ -1,0 +1,36 @@
+---
+import SectionLayout from "../layouts/SectionLayout.astro";
+import Projects from "./icons/Projects.astro";
+import ProjectItem from "./ProjectItem.astro";
+
+const PROJECTS = [
+    {
+        title: "Natures Variety - Advance",
+        description:
+            "Desarollo de la tienda online de Natures Variety en la plataforma Salesforce Commerce Cloud. Creada con Javascript, jQuery, Bootstrap y integración con la plataforma Salesforce.",
+        image: "/public/project1.webp",
+        link: "https://www.naturesvariety.com/",
+    },
+    {
+        title: "Salvatore Plata",
+        description: "Desarrollo de la tienda online de Salvatore Plata en la plataforma Wordpress. Creada con HTML, Bootstrap, Javascript y jQuery.",
+        image: "/public/project2.webp",
+        link: "https://salvatoreplata.es/",
+    },
+];
+---
+
+<SectionLayout>
+    <h2 class="mb-14 text-xl md:text-3xl font-bold flex items-center gap-4">
+        <Projects class="size-6 md:size-10" />Proyectos
+    </h2>
+    <div class="flex flex-col gap-20">
+        {
+            PROJECTS.map((project) => (
+                <article class="flex flex-col gap-4">
+                    <ProjectItem {...project} />
+                </article>
+            ))
+        }
+    </div>
+</SectionLayout>
