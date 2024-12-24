@@ -3,17 +3,32 @@ import SectionLayout from "../layouts/SectionLayout.astro";
 import Projects from "./icons/Projects.astro";
 import ProjectItem from "./ProjectItem.astro";
 
-const PROJECTS = [
+import JavaScript from "./icons/JavaScript.astro";
+import Salesforce from "./icons/Salesforce.astro";
+
+export const PROJECTS = [
     {
         title: "Natures Variety - Advance",
         description:
             "Desarollo de la tienda online de Natures Variety en la plataforma Salesforce Commerce Cloud. Creada con Javascript, jQuery, Bootstrap y integración con la plataforma Salesforce.",
         image: "/public/project1.webp",
         link: "https://www.naturesvariety.com/",
+        icons: [JavaScript, Salesforce],
+        architecture: [
+            {
+                icon: JavaScript,
+                name: "JavaScript",
+            },
+            {
+                icon: Salesforce,
+                name: "Salesforce",
+            },
+        ],
     },
     {
         title: "Salvatore Plata",
-        description: "Desarrollo de la tienda online de Salvatore Plata en la plataforma Wordpress. Creada con HTML, Bootstrap, Javascript y jQuery.",
+        description:
+            "Desarrollo de la tienda online de Salvatore Plata en la plataforma Wordpress. Creada con HTML, Bootstrap, Javascript y jQuery.",
         image: "/public/project2.webp",
         link: "https://salvatoreplata.es/",
     },

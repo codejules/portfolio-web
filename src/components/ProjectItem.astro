@@ -4,9 +4,16 @@ interface Props {
     description: string;
     image: string;
     link?: string;
+    icons?: any[];
+    architecture?: string[];
 }
 
 const { title, description, image, link } = Astro.props;
+
+import { PROJECTS } from "./Project.astro";
+const project = PROJECTS.find((p) => p.title === title); // Acceder a los iconoes especificos del proyecto en particular
+const icons = project?.icons || [];
+
 import Link from "./icons/Link.astro";
 ---
 
@@ -17,12 +24,24 @@ import Link from "./icons/Link.astro";
         <img
             class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
             src={image}
-            alt="natures variety development"
-            title="natures variety development"
+            alt={title}
+            title={title}
         />
     </div>
     <div class="gap-4 flex flex-col items-start">
         <h3 class="text-md md:text-2xl font-bold">{title}</h3>
+        {
+            icons?.length > 0 && (
+                <ul class="flex gap-2">
+                    {icons.map((Icon) => (
+                        <li class="flex gap-2 items-center rounded-full text-xs bg-[#003159] py-1 px-2 ">
+                            <Icon class="size-4 rounded" />
+                            {Icon.name}
+                        </li>
+                    ))}
+                </ul>
+            )
+        }
         <p class="text-white/50">{description}</p>
         <button
             ><a
