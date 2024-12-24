@@ -41,9 +41,32 @@ const { title, description } = Astro.props;
 		width: 100%;
 	}
 
-	@media(reduced-motion: reduce) {
+	p {
+		line-height: 1.5;
+		margin-bottom: 1rem;
+	}
+
+	@media (reduced-motion: reduce) {
 		html {
 			scroll-behavior: auto;
+		}
+	}
+
+	header > nav {
+		animation: blur linear both 0.5s;
+		animation-timeline: scroll();
+		animation-range: 0 100px;
+	}
+
+	@keyframes blur {
+		to {
+			backdrop-filter: blur(20px);
+			padding: 0.50rem 1rem;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			background-color: #003159;
+			border-radius: 9999px;
 		}
 	}
 </style>

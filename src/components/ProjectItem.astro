@@ -4,7 +4,7 @@ interface Props {
     description: string;
     image: string;
     link?: string;
-    architecture?: [{ icon: any; name: string }];
+    architecture: { icon: any; name: string }[];
 }
 
 const { title, description, image, link, architecture } = Astro.props;
