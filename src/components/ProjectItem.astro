@@ -4,15 +4,10 @@ interface Props {
     description: string;
     image: string;
     link?: string;
-    icons?: any[];
-    architecture?: string[];
+    architecture?: [{ icon: any; name: string }];
 }
 
-const { title, description, image, link } = Astro.props;
-
-import { PROJECTS } from "./Project.astro";
-const project = PROJECTS.find((p) => p.title === title); // Acceder a los iconoes especificos del proyecto en particular
-const icons = project?.icons || [];
+const { title, description, image, link, architecture } = Astro.props;
 
 import Link from "./icons/Link.astro";
 ---
@@ -30,18 +25,20 @@ import Link from "./icons/Link.astro";
     </div>
     <div class="gap-4 flex flex-col items-start">
         <h3 class="text-md md:text-2xl font-bold">{title}</h3>
+
         {
-            icons?.length > 0 && (
+            architecture && (
                 <ul class="flex gap-2">
-                    {icons.map((Icon) => (
-                        <li class="flex gap-2 items-center rounded-full text-xs bg-[#003159] py-1 px-2 ">
+                    {architecture.map(({ icon: Icon, name }) => (
+                        <li class="flex gap-2 items-center rounded-full text-xs bg-[#003159] py-1 px-2">
                             <Icon class="size-4 rounded" />
-                            {Icon.name}
+                            {name}
                         </li>
                     ))}
                 </ul>
             )
         }
+
         <p class="text-white/50">{description}</p>
         <button
             ><a

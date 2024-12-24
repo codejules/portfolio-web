@@ -5,6 +5,8 @@ import ProjectItem from "./ProjectItem.astro";
 
 import JavaScript from "./icons/JavaScript.astro";
 import Salesforce from "./icons/Salesforce.astro";
+import Bootstrap from "./icons/Bootstrap.astro";
+import jQuery from "./icons/jQuery.astro";
 
 export const PROJECTS = [
     {
@@ -13,7 +15,6 @@ export const PROJECTS = [
             "Desarollo de la tienda online de Natures Variety en la plataforma Salesforce Commerce Cloud. Creada con Javascript, jQuery, Bootstrap y integración con la plataforma Salesforce.",
         image: "/public/project1.webp",
         link: "https://www.naturesvariety.com/",
-        icons: [JavaScript, Salesforce],
         architecture: [
             {
                 icon: JavaScript,
@@ -23,6 +24,10 @@ export const PROJECTS = [
                 icon: Salesforce,
                 name: "Salesforce",
             },
+            {
+                icon: Bootstrap,
+                name: "Bootstrap",
+            },
         ],
     },
     {
@@ -31,6 +36,20 @@ export const PROJECTS = [
             "Desarrollo de la tienda online de Salvatore Plata en la plataforma Wordpress. Creada con HTML, Bootstrap, Javascript y jQuery.",
         image: "/public/project2.webp",
         link: "https://salvatoreplata.es/",
+        architecture: [
+            {
+                icon: jQuery,
+                name: "jQuery",
+            },
+            {
+                icon: JavaScript,
+                name: "JavaScript",
+            },
+            {
+                icon: Bootstrap,
+                name: "Bootstrap",
+            },
+        ],
     },
 ];
 ---
